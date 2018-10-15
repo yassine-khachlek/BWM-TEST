@@ -1,6 +1,6 @@
 # Test Application
 
-# Install
+## Install
 
 Please refer to Laravel install documentation [Here](https://laravel.com/docs/5.7#installation) for environnement setup.
 
@@ -51,6 +51,42 @@ The application will be available on:
 ```shell
 http:://127.0.0.1:8080
 ```
+
+## Available endpoints:
+
+### GET PAGINATED POSTS WITH USER RELATION:
+
+GET     http://127.0.0.1:8000/api/v1/posts?page=1
+
+### STORE POST:
+
+POST    http://127.0.0.1:8000/api/v1/posts
+
+Params:
+
+    user_id
+    value
+
+### UPDATE POST:
+
+PATCH   http://127.0.0.1:8000/api/v1/posts/{id}
+
+Params:
+
+    user_id
+    value
+
+### GET POST WITH USER AND COMMENTS (LAST 10) RELATIONS:
+
+GET     http://127.0.0.1:8000/api/v1/posts/{id}
+
+### DELETE POST:
+
+DELETE  http://127.0.0.1:8000/api/v1/posts/{id}
+
+### GET PAGINATED POST COMMENTS:
+
+GET  http://127.0.0.1:8000/api/v1/posts/{id}/comments?page=1
 
 To Do:
 

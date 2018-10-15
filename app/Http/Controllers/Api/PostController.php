@@ -79,4 +79,20 @@ class PostController extends Controller
         return $post;
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, $id)
+    {
+        $user = User::findOrFail($request->get('user_id'));
+
+        $post = $user->posts()->findOrFail($id);
+
+        $post->delete();
+
+        return $post;
+    }
 }

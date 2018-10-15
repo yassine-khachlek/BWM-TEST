@@ -28,4 +28,13 @@ Route::resource('/v1/posts/{id}/comments', 'Api\CommentController',
     ]
 );
 
+Route::resource('/v1/posts', 'Api\PostController',
+    [
+        'only' => [
+            'index',
+        ]
+        ,'names' => [
+            'index' => 'post.index',
+        ]
+    ]
 );

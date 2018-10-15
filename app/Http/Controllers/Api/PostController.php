@@ -40,4 +40,23 @@ class PostController extends Controller
         return $post;
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $post = Post::with(['user', 'comments' => function($query) {
+
+            // Get last 10 comments only to avoid overloading
+
+            $query->orderBy('created_at', 'desc')->paginate(10);
+
+        }])->findOrFail($id);
+
+        return $post;
+    }
+
 }

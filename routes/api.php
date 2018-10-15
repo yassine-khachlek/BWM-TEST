@@ -32,9 +32,11 @@ Route::resource('/v1/posts', 'Api\PostController',
     [
         'only' => [
             'index',
+            'store',
         ]
         ,'names' => [
             'index' => 'post.index',
+            'store' => 'post.store',
         ]
     ]
 );

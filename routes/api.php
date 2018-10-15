@@ -35,12 +35,14 @@ Route::resource('/v1/posts', 'Api\PostController',
             'store',
             'show',
             'update',
+            'destroy',
         ]
         ,'names' => [
             'index' => 'post.index',
             'store' => 'post.store',
             'show' => 'post.show',
             'update' => 'post.update',
+            'destroy' => 'post.destroy',
         ]
     ]
 );

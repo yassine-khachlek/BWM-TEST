@@ -59,4 +59,24 @@ class PostController extends Controller
         return $post;
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($request->get('user_id'));
+
+        $post = $user->posts()->findOrFail($id);
+
+        $post->update([
+            'value' => $request->get('value'),
+        ]);
+
+        return $post;
+    }
+
 }

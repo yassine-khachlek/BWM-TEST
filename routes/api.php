@@ -34,11 +34,13 @@ Route::resource('/v1/posts', 'Api\PostController',
             'index',
             'store',
             'show',
+            'update',
         ]
         ,'names' => [
             'index' => 'post.index',
             'store' => 'post.store',
             'show' => 'post.show',
+            'update' => 'post.update',
         ]
     ]
 );

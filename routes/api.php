@@ -16,3 +16,16 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('/v1/posts/{id}/comments', 'Api\CommentController',
+    [
+        'only' => [
+            'index',
+        ]
+        ,'names' => [
+            'index' => 'post.comment.index',
+        ]
+    ]
+);
+
+);

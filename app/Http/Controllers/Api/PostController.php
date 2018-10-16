@@ -4,11 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,9 +41,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::findOrFail($request->get('user_id'));
-
-        $post = $user->posts()->save(new Post([
+        $post = Auth::user()->posts()->save(new Post([
            'value' => $request->get('value'),
         ]));
 
@@ -68,9 +76,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($request->get('user_id'));
-
-        $post = $user->posts()->findOrFail($id);
+        $post = Auth::user()->posts()->findOrFail($id);
 
         $post->update([
             'value' => $request->get('value'),
@@ -87,9 +93,7 @@ class PostController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $user = User::findOrFail($request->get('user_id'));
-
-        $post = $user->posts()->findOrFail($id);
+        $post = Auth::user()->posts()->findOrFail($id);
 
         $post->delete();
 

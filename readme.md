@@ -70,8 +70,8 @@ Parameters:
 
 | Name | Type |
 |---|---|
-| email * |  string |
-| password * |  string |
+| email * | string |
+| password * | string |
     
 Response: 
 
@@ -179,15 +179,15 @@ PATCH   http://127.0.0.1:8000/api/v1/posts/{id}?token={access_token}
 
 Headers:
 
-| Name| Type | value | Description |
+| Name | Type | value | Description |
 |---|---|---|---|
 | Authorization * | string | Bearer {access_token} | Used instead of query string parameter (token) |
 
 Parameters:
 
-    | Name| Type  |
+    | Name | Type  |
     |---|---|
-    | value * |  string |
+    | value * | string |
 
 Response:
 

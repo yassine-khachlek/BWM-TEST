@@ -185,7 +185,7 @@ Headers:
 
 Parameters:
 
-    | Name | Type  |
+    | Name | Type |
     |---|---|
     | value * | string |
 

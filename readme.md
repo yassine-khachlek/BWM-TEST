@@ -13,7 +13,7 @@ git clone https://github.com/yassine-khachlek/BWM-TEST.git
 Move to the cloned repository:
 
 ```shell
-cd clone BWM-TEST
+cd BWM-TEST
 ```
 
 Install dependencies using composer:
@@ -68,7 +68,7 @@ POST     http://127.0.0.1:8000/api/v1/auth/login
 
 Parameters:
 
-| Name| Type |
+| Name | Type |
 |---|---|
 | email * |  string |
 | password * |  string |
